@@ -24,7 +24,8 @@ def consolidate_cart(cart)
         :count => 1 
       }
       new_cart << new_cart_item
-      
+    end 
+    
 end
 
 def apply_coupons(cart, coupons)
