@@ -23,6 +23,7 @@ def coupons
 end
 
 def generate_cart
+# this generates a cart of random items between 0 and 19
 	[].tap do |cart|
 		rand(20).times do
 			cart.push(items.sample)
@@ -31,6 +32,7 @@ def generate_cart
 end
 
 def generate_coupons
+# this generates a random coupon either 0 or 1 times 
 	[].tap do |c|
 		rand(2).times do
 			c.push(coupons.sample)
@@ -39,10 +41,13 @@ def generate_coupons
 end
 
 cart = generate_cart
+# this generates a single random cart and uses it for the rest of the test
 coupons = generate_coupons
+# same for coupon 
 
 puts "Items in cart"
 cart.each do |item|
+# this shows you all the info on the items 
 	puts "Item: #{item.keys.first}"
 	puts "Price: #{item[item.keys.first][:price]}"
 	puts "Clearance: #{item[item.keys.first][:clearance]}"
@@ -51,7 +56,9 @@ end
 
 puts "Coupons on hand"
 coupons.each do |coupon|
+# advertises coupon on hand, if any 
 	puts "Get #{coupon[:item].capitalize} for #{coupon[:cost]} when you by #{coupon[:num]}"
 end
 
 puts "Your total is #{checkout(cart: cart, coupons: coupons)}"
+# this is the very last thing - write all code before this 
