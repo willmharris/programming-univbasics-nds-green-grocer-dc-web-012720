@@ -11,6 +11,8 @@ end
 
 def consolidate_cart(cart)
   new_cart = [] 
+  counter = 0 
+  
 end
 
 def apply_coupons(cart, coupons)
